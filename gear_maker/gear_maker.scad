@@ -17,7 +17,7 @@ function pol_rect(r,ang)  = [r*cos(ang),r*sin(ang)];
 
 /* Gear Parameters */
 a = 10; //gear base radius
-b = 1.6;  //teet "depht" (inverse scale)
+b = 1;  //teet "depht"
 c = 10; //teeth "sharpness"
 n = 10; //number of teeth
 step = 360/200;  //resolution used to generate gear
@@ -35,7 +35,7 @@ uncomment and set to animate to see effects and play around
 
 
 gear_pts = [ for (ang = [0:step:360]) let
-        (pt = pol_rect(a + (1/b)*tanh(c*sin(n*ang)),ang) ) 
+        (pt = pol_rect(a + (b)*tanh(c*sin(n*ang)),ang) ) 
         pt];
 
 
